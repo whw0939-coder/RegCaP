@@ -154,7 +154,7 @@ def main():
         rank_zero_info("\n=== Running evaluation on provided checkpoints ===")
         for ckpt in all_ckpts:
             ckpt_base = os.path.splitext(os.path.basename(ckpt))[0]
-            tag = f"{base_tag}__{ckpt_base}"   
+            tag = f"{base_tag}__{ckpt_base}"
             rank_zero_info(f"\n✅ Testing checkpoint: {ckpt} (tag={tag})")
             try:
                 model = VulDetectionSystem.load_from_checkpoint(

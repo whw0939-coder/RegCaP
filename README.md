@@ -91,7 +91,7 @@ pip install -r requirements.txt
 export PATH="$PATH:/your-path/RegCaP/joern/joern-cli"
 
 # Run extraction for all datasets
-joern --script ./joern/eexport_ast_ccd_from_dot.sc --param srcBaseArg="/path/dataset/*/c/"   --param outBaseArg="/path/dataset/*/js/"
+joern --script ./joern/export_ast_ccd_from_dot.sc --param srcBaseArg="/path/dataset/*/c/"   --param outBaseArg="/path/dataset/*/js/"
 ```
 
 This scans every `.c` file under `dataset/*/c/` and writes AST JSONs to `dataset/*/js/`.
