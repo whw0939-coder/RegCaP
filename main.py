@@ -48,7 +48,6 @@ def _make_trainer_for_eval(gpus):
 
 
 def _default_pred_tag_from_data_path(p: str) -> str:
-    """pred_tag 默认值：基于数据文件名（去后缀）"""
     base = os.path.basename(p)
     return os.path.splitext(base)[0] if "." in base else base
 
