@@ -1,0 +1,122 @@
+[
+  {
+    "mode": "api",
+    "s": 0.2,
+    "file": "pred_FFMPeg+Qemu_api_s020.jsonl",
+    "N_overlap": 2413,
+    "F1_base": 0.8616,
+    "F1_pert": 0.815,
+    "DeltaF1": 0.0465,
+    "IS": 0.8711,
+    "IS_correct": 0.9003,
+    "threshold": 0.5
+  },
+  {
+    "mode": "api",
+    "s": 0.4,
+    "file": "pred_FFMPeg+Qemu_api_s040.jsonl",
+    "N_overlap": 2374,
+    "F1_base": 0.8616,
+    "F1_pert": 0.7977,
+    "DeltaF1": 0.0638,
+    "IS": 0.8614,
+    "IS_correct": 0.8886,
+    "threshold": 0.5
+  },
+  {
+    "mode": "api",
+    "s": 0.6,
+    "file": "pred_FFMPeg+Qemu_api_s060.jsonl",
+    "N_overlap": 2325,
+    "F1_base": 0.8616,
+    "F1_pert": 0.7772,
+    "DeltaF1": 0.0843,
+    "IS": 0.849,
+    "IS_correct": 0.8732,
+    "threshold": 0.5
+  },
+  {
+    "mode": "api",
+    "s": 0.8,
+    "file": "pred_FFMPeg+Qemu_api_s080.jsonl",
+    "N_overlap": 2317,
+    "F1_base": 0.8616,
+    "F1_pert": 0.7573,
+    "DeltaF1": 0.1042,
+    "IS": 0.8265,
+    "IS_correct": 0.8515,
+    "threshold": 0.5
+  },
+  {
+    "mode": "api",
+    "s": 1.0,
+    "file": "pred_FFMPeg+Qemu_api_s100.jsonl",
+    "N_overlap": 2334,
+    "F1_base": 0.8616,
+    "F1_pert": 0.7398,
+    "DeltaF1": 0.1218,
+    "IS": 0.8098,
+    "IS_correct": 0.8334,
+    "threshold": 0.5
+  },
+  {
+    "mode": "token",
+    "s": 0.2,
+    "file": "pred_FFMPeg+Qemu_token_s020.jsonl",
+    "N_overlap": 2172,
+    "F1_base": 0.8616,
+    "F1_pert": 0.8583,
+    "DeltaF1": 0.0032,
+    "IS": 0.9641,
+    "IS_correct": 0.972,
+    "threshold": 0.5
+  },
+  {
+    "mode": "token",
+    "s": 0.4,
+    "file": "pred_FFMPeg+Qemu_token_s040.jsonl",
+    "N_overlap": 2214,
+    "F1_base": 0.8616,
+    "F1_pert": 0.8448,
+    "DeltaF1": 0.0168,
+    "IS": 0.9363,
+    "IS_correct": 0.9509,
+    "threshold": 0.5
+  },
+  {
+    "mode": "token",
+    "s": 0.6,
+    "file": "pred_FFMPeg+Qemu_token_s060.jsonl",
+    "N_overlap": 2284,
+    "F1_base": 0.8616,
+    "F1_pert": 0.8408,
+    "DeltaF1": 0.0208,
+    "IS": 0.9199,
+    "IS_correct": 0.9414,
+    "threshold": 0.5
+  },
+  {
+    "mode": "token",
+    "s": 0.8,
+    "file": "pred_FFMPeg+Qemu_token_s080.jsonl",
+    "N_overlap": 2350,
+    "F1_base": 0.8616,
+    "F1_pert": 0.8238,
+    "DeltaF1": 0.0378,
+    "IS": 0.9102,
+    "IS_correct": 0.9289,
+    "threshold": 0.5
+  },
+  {
+    "mode": "token",
+    "s": 1.0,
+    "file": "pred_FFMPeg+Qemu_token_s100.jsonl",
+    "N_overlap": 2338,
+    "F1_base": 0.8616,
+    "F1_pert": 0.8206,
+    "DeltaF1": 0.041,
+    "IS": 0.8939,
+    "IS_correct": 0.9171,
+    "threshold": 0.5
+  }
+]

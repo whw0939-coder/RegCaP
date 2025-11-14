@@ -1,8 +1,8 @@
-# REGAL: Region-Level Causal Modeling with Regional Distributional Priors for Vulnerability Detection
+# RegCaP: Region-Centric, Causal-Inspired Vulnerability Detection with Distributional Priors
 
 # Reproduction Guide
 
-REGAL detects software vulnerabilities via **region-level causal modeling** that integrates structural partitioning, regional distributional priors, and intervention-based robustness tests.
+RegCaP detects software vulnerabilities via **region-level causal modeling** that integrates structural partitioning, regional distributional priors, and intervention-based robustness tests.
 This repository provides code and instructions to reproduce all experiments reported in the paper.
 
 ---
@@ -10,21 +10,13 @@ This repository provides code and instructions to reproduce all experiments repo
 ## 1 Project structure
 
 ```
-REGAL/
-├── joern/                         # Joern CLI (binary) + extraction scripts
+RegCaP/
+├── joern/                         # Joern CLI
 ├── dataset/                       
 │   ├── FFMPeg+Qemu.pkl
 │   ├── BigVul.pkl
 │   ├── DiverseVul.pkl
 │   └── Reveal.pkl
-│   ├── FFMPeg+Qemu/
-│   │   ├── c/                     # raw .c files
-│   │   ├── js/                    # AST JSONs (after Joern)
-│   │   ├── W2V/                   # word2vec model
-│   │   └── vulnerable_lines.json
-│   ├── BigVul/                    # same layout + cwe_mapping.json
-│   ├── DiverseVul/                # same layout + cwe_mapping.json
-│   └── Reveal/                    # same layout (no vulnerable_lines.json)
 ├── CWE/                           
 │   ├── BigVul/
 │   │   ├── CWE-119.pkl
@@ -33,12 +25,16 @@ REGAL/
 │   └── DiverseVul/
 │       ├── CWE-… .pkl
 │       └── …
-├── model/                         # trained checkpoints (provided)
+├── model/                         # trained checkpoints
 │   ├── FFMPeg+Qemu/
 │   ├── BigVul/
 │   ├── DiverseVul/
 │   ├── BigVul-CWE/
 │   └── DiverseVul-CWE/
+├── split_lists/                   # train/val/test splits (FFMPeg+Qemu)
+├── train_stats/                   # precomputed token/API stats for training set
+├── delta_is/                      # ΔF1 & IS results/figures (token OR API)
+├── delta_is_both/                 # ΔF1 & IS results/figures (token AND API)
 ├── main.py                        # train / evaluate
 ├── model.py                       # network definition
 ├── training.py                    # training loop
@@ -50,7 +46,8 @@ REGAL/
 ├── perturb_testset.py             # perturb tokens or APIs separately
 ├── perturb_both.py                # jointly perturb tokens & APIs
 ├── calc_delta_is.py               # compute ΔF1 & IS under perturbations
-└── inspect_test_details.py        # detailed causal-region inspection
+├── inspect_test_details.py        # detailed causal-region inspection
+└── export_ast_ccd_from_dot.sc     # joern extraction scripts
 ```
 
 ---
@@ -65,7 +62,7 @@ REGAL/
 | Others         | see `requirements.txt` |
 
 ```bash
-cd REGAL
+cd RegCaP
 pip install -r requirements.txt
 ```
 
@@ -91,7 +88,7 @@ pip install -r requirements.txt
 
 ```bash
 # Add Joern CLI to PATH
-export PATH="$PATH:/your-path/REGAL/joern/joern-cli"
+export PATH="$PATH:/your-path/RegCaP/joern/joern-cli"
 
 # Run extraction for all datasets
 joern --script ./joern/eexport_ast_ccd_from_dot.sc --param srcBaseArg="/path/dataset/*/c/"   --param outBaseArg="/path/dataset/*/js/"
@@ -174,11 +171,12 @@ python main.py \
 
 ### RQ3 — Robustness under token/API perturbations
 
-1. Analyze training-set distributions:
+1. Analyze training-set distributions (uses split_lists/ automatically):
 
 ```bash
 python stats_train_tokens_apis.py
 ```
+Outputs distribution files under train_stats/.
 
 2. Create perturbed test sets:
 
@@ -202,6 +200,7 @@ python main.py \
 ```bash
 python calc_delta_is.py
 # → outputs ./delta_is/delta_is_summary.json and figures
+#   (For joint perturbations, corresponding outputs go to ./delta_is_both/)
 ```
 
 ---

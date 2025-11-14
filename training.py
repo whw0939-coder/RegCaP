@@ -330,7 +330,6 @@ class VulDetectionSystem(pl.LightningModule):
         fig_true.savefig(f_true, dpi=150, bbox_inches="tight"); plt.close(fig_true)
 
     def on_test_epoch_end(self):
-        # ===== 原有日志 =====
         self.log("test_region_mse", self.test_mse.compute(), prog_bar=True, on_epoch=True, sync_dist=True)
         self.log("test_region_mae", self.test_mae.compute(), prog_bar=True, on_epoch=True, sync_dist=True)
         self.test_mse.reset(); self.test_mae.reset()
