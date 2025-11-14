@@ -76,13 +76,32 @@ pip install -r requirements.txt
 * Word2Vec models: `dataset/*/W2V/`
 * Joern CLI: `joern/`
 
-> Links to datasets, W2V models, and Joern binaries are provided in the anonymous artifact package.
-> After download & extraction:
+> **Data & tools (Zenodo Sandbox)**
 >
-> 1. Split each compilation unit into individual `*.c` files.
-> 2. Place them under `dataset/<Corpus>/c/`.
-> 3. Copy `joern/` into the project root.
-> 4. Copy each `W2V/` folder into the corresponding dataset directory.
+> Due to repository size limits, the raw corpora and Joern binaries are hosted on Zenodo Sandbox:
+> - `FFMPeg+Qemu.zip`
+> - `BigVul.zip`
+> - `DiverseVul.zip`
+> - `Reveal.zip`
+> - `joern.zip`
+>
+> All files are available under the anonymous record:
+> https://sandbox.zenodo.org/records/401848
+>
+> After download & extraction (from the project root):
+>
+> 1. Extract `joern.zip` so that the Joern CLI folder appears as:
+>    `./joern/`
+> 2. Extract each dataset archive (`FFMPeg+Qemu.zip`, `BigVul.zip`, `DiverseVul.zip`, `Reveal.zip`).  
+>    This will populate:
+>    - `./dataset/FFMPeg+Qemu.pkl`
+>    - `./dataset/BigVul.pkl`
+>    - `./dataset/DiverseVul.pkl`
+>    - `./dataset/Reveal.pkl`
+> 3. If you want to fully regenerate the PKLs from raw `.c` files, follow the
+>    **AST generation with Joern** and **data_preprocessing** steps described
+>    in §3; otherwise you can directly use the provided `.pkl` files under `dataset/`.
+
 
 ### AST/CFG/pdg generation with Joern
 
