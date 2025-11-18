@@ -110,7 +110,7 @@ pip install -r requirements.txt
 export PATH="$PATH:/your-path/RegCaP/joern/joern-cli"
 
 # Run extraction for all datasets
-joern --script ./joern/export_ast_ccd_from_dot.sc --param srcBaseArg="/path/dataset/*/c/"   --param outBaseArg="/path/dataset/*/js/"
+joern --script export_ast_ccd_from_dot.sc --param srcBaseArg="/path/dataset/*/c/"   --param outBaseArg="/path/dataset/*/js/"
 ```
 
 This scans every `.c` file under `dataset/*/c/` and writes AST JSONs to `dataset/*/js/`.
@@ -255,7 +255,7 @@ Each file is named `base_label.c` (label `0/1` can be dummy if unknown).
 Run Joern on `Location/c`, preprocess, then evaluate with a trained model:
 
 ```bash
-joern --script joern/extract-ast.sc --param srcBaseArg="Location/c/"   --param outBaseArg="Location/js/"
+joern --script export_ast_ccd_from_dot.sc --param srcBaseArg="Location/c/"   --param outBaseArg="Location/js/"
 
 python W2V-training.py --json-dir "Location/js/" --out-dir "Location/W2V/" --model-name "Location-128-20.wordvectors"
 
