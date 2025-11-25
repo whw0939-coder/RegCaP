@@ -1,0 +1,2054 @@
+{
+  
+  "ast_nodes":  [
+    {
+      "name": "<global>",
+      "astParentFullName": "tmp.c:<global>",
+      "columnNumberEnd": 1,
+      "fullName": "tmp.c:<global>",
+      "signature": "",
+      "astParentType": "TYPE_DECL",
+      "columnNumber": 1,
+      "lineNumberEnd": 27,
+      "_label": "METHOD",
+      "code": "<global>",
+      "isExternal": false,
+      "lineNumber": 1,
+      "id": 5,
+      "order": 1,
+      "filename": "tmp.c"
+    },
+    {
+      "dynamicTypeHintFullName": [
+        
+      ],
+      "code": "<empty>",
+      "typeFullName": "ANY",
+      "columnNumber": 1,
+      "order": 1,
+      "_label": "BLOCK",
+      "lineNumber": 1,
+      "id": 6,
+      "possibleTypes": [
+        
+      ],
+      "argumentIndex": -1
+    },
+    {
+      "name": "handle_request",
+      "astParentFullName": "tmp.c:<global>",
+      "columnNumberEnd": 1,
+      "fullName": "handle_request",
+      "signature": "void handle_request (char*)",
+      "astParentType": "TYPE_DECL",
+      "columnNumber": 1,
+      "lineNumberEnd": 27,
+      "_label": "METHOD",
+      "code": "void handle_request(char *req) {\n    char buffer[64];\n    int i = 0;\n    int len = strlen(req);\n    log_info(\"Request length = %d\", len);\n\n    if (len <= 0) {\n        printf(\"Empty request.\\n\");\n        return;\n    }\n\n    for (i = 0; i < len; i++) {\n        if (req[i] == '\\n' || req[i] == '\\r') {\n            req[i] = '\\0';\n            break;\n        }\n    }\n\n    memcpy(buffer, req, len);\n    buffer[len] = '\\0';\n\n    if (strstr(buffer, \"ADMIN\")) {\n        printf(\"Privileged command detected.\\n\");\n    }\n\n    printf(\"Processed: %s\\n\", buffer);\n}",
+      "isExternal": false,
+      "lineNumber": 1,
+      "id": 7,
+      "order": 1,
+      "filename": "tmp.c"
+    },
+    {
+      "dynamicTypeHintFullName": [
+        
+      ],
+      "name": "req",
+      "evaluationStrategy": "BY_VALUE",
+      "isVariadic": false,
+      "code": "char *req",
+      "typeFullName": "char*",
+      "columnNumber": 21,
+      "order": 1,
+      "_label": "METHOD_PARAMETER_IN",
+      "possibleTypes": [
+        
+      ],
+      "index": 1,
+      "lineNumber": 1,
+      "id": 8
+    },
+    {
+      "dynamicTypeHintFullName": [
+        
+      ],
+      "code": "{\n    char buffer[64];\n    int i = 0;\n    int len = strlen(req);\n    log_info(\"Request length = %d\", len);\n\n    if (len <= 0) {\n        printf(\"Empty request.\\n\");\n        return;\n    }\n\n    for (i = 0; i < len; i++) {\n        if (req[i] == '\\n' || req[i] == '\\r') {\n            req[i] = '\\0';\n            break;\n        }\n    }\n\n    memcpy(buffer, req, len);\n    buffer[len] = '\\0';\n\n    if (strstr(buffer, \"ADMIN\")) {\n        printf(\"Privileged command detected.\\n\");\n    }\n\n    printf(\"Processed: %s\\n\", buffer);\n}",
+      "typeFullName": "void",
+      "columnNumber": 32,
+      "order": 2,
+      "_label": "BLOCK",
+      "lineNumber": 1,
+      "id": 9,
+      "possibleTypes": [
+        
+      ],
+      "argumentIndex": -1
+    },
+    {
+      "dynamicTypeHintFullName": [
+        
+      ],
+      "name": "buffer",
+      "typeFullName": "char[64]",
+      "columnNumber": 10,
+      "order": 1,
+      "_label": "LOCAL",
+      "possibleTypes": [
+        
+      ],
+      "code": "char[64] buffer",
+      "lineNumber": 2,
+      "id": 10
+    },
+    {
+      "dynamicTypeHintFullName": [
+        
+      ],
+      "name": "i",
+      "typeFullName": "int",
+      "columnNumber": 9,
+      "order": 2,
+      "_label": "LOCAL",
+      "possibleTypes": [
+        
+      ],
+      "code": "int i",
+      "lineNumber": 3,
+      "id": 11
+    },
+    {
+      "name": "<operator>.assignment",
+      "signature": "",
+      "code": "i = 0",
+      "typeFullName": "<empty>",
+      "columnNumber": 9,
+      "order": 3,
+      "methodFullName": "<operator>.assignment",
+      "_label": "CALL",
+      "dynamicTypeHintFullName": [
+        
+      ],
+      "dispatchType": "STATIC_DISPATCH",
+      "lineNumber": 3,
+      "id": 12,
+      "possibleTypes": [
+        
+      ],
+      "argumentIndex": -1
+    },
+    {
+      "dynamicTypeHintFullName": [
+        
+      ],
+      "name": "i",
+      "code": "i",
+      "typeFullName": "int",
+      "columnNumber": 9,
+      "order": 1,
+      "_label": "IDENTIFIER",
+      "lineNumber": 3,
+      "id": 13,
+      "possibleTypes": [
+        
+      ],
+      "argumentIndex": 1
+    },
+    {
+      "dynamicTypeHintFullName": [
+        
+      ],
+      "code": "0",
+      "typeFullName": "int",
+      "columnNumber": 13,
+      "order": 2,
+      "_label": "LITERAL",
+      "lineNumber": 3,
+      "id": 14,
+      "possibleTypes": [
+        
+      ],
+      "argumentIndex": 2
+    },
+    {
+      "dynamicTypeHintFullName": [
+        
+      ],
+      "name": "len",
+      "typeFullName": "int",
+      "columnNumber": 9,
+      "order": 4,
+      "_label": "LOCAL",
+      "possibleTypes": [
+        
+      ],
+      "code": "int len",
+      "lineNumber": 4,
+      "id": 15
+    },
+    {
+      "name": "<operator>.assignment",
+      "signature": "",
+      "code": "len = strlen(req)",
+      "typeFullName": "<empty>",
+      "columnNumber": 9,
+      "order": 5,
+      "methodFullName": "<operator>.assignment",
+      "_label": "CALL",
+      "dynamicTypeHintFullName": [
+        
+      ],
+      "dispatchType": "STATIC_DISPATCH",
+      "lineNumber": 4,
+      "id": 16,
+      "possibleTypes": [
+        
+      ],
+      "argumentIndex": -1
+    },
+    {
+      "dynamicTypeHintFullName": [
+        
+      ],
+      "name": "len",
+      "code": "len",
+      "typeFullName": "int",
+      "columnNumber": 9,
+      "order": 1,
+      "_label": "IDENTIFIER",
+      "lineNumber": 4,
+      "id": 17,
+      "possibleTypes": [
+        
+      ],
+      "argumentIndex": 1
+    },
+    {
+      "name": "strlen",
+      "signature": "",
+      "code": "strlen(req)",
+      "typeFullName": "<empty>",
+      "columnNumber": 15,
+      "order": 2,
+      "methodFullName": "strlen",
+      "_label": "CALL",
+      "dynamicTypeHintFullName": [
+        
+      ],
+      "dispatchType": "STATIC_DISPATCH",
+      "lineNumber": 4,
+      "id": 18,
+      "possibleTypes": [
+        
+      ],
+      "argumentIndex": 2
+    },
+    {
+      "dynamicTypeHintFullName": [
+        
+      ],
+      "name": "req",
+      "code": "req",
+      "typeFullName": "char*",
+      "columnNumber": 22,
+      "order": 1,
+      "_label": "IDENTIFIER",
+      "lineNumber": 4,
+      "id": 19,
+      "possibleTypes": [
+        
+      ],
+      "argumentIndex": 1
+    },
+    {
+      "name": "log_info",
+      "signature": "",
+      "code": "log_info(\"Request length = %d\", len)",
+      "typeFullName": "<empty>",
+      "columnNumber": 5,
+      "order": 6,
+      "methodFullName": "log_info",
+      "_label": "CALL",
+      "dynamicTypeHintFullName": [
+        
+      ],
+      "dispatchType": "STATIC_DISPATCH",
+      "lineNumber": 5,
+      "id": 20,
+      "possibleTypes": [
+        
+      ],
+      "argumentIndex": -1
+    },
+    {
+      "dynamicTypeHintFullName": [
+        
+      ],
+      "code": "\"Request length = %d\"",
+      "typeFullName": "char",
+      "columnNumber": 14,
+      "order": 1,
+      "_label": "LITERAL",
+      "lineNumber": 5,
+      "id": 21,
+      "possibleTypes": [
+        
+      ],
+      "argumentIndex": 1
+    },
+    {
+      "dynamicTypeHintFullName": [
+        
+      ],
+      "name": "len",
+      "code": "len",
+      "typeFullName": "int",
+      "columnNumber": 37,
+      "order": 2,
+      "_label": "IDENTIFIER",
+      "lineNumber": 5,
+      "id": 22,
+      "possibleTypes": [
+        
+      ],
+      "argumentIndex": 2
+    },
+    {
+      "parserTypeName": "CASTIfStatement",
+      "code": "if (len <= 0)",
+      "columnNumber": 5,
+      "order": 7,
+      "controlStructureType": "IF",
+      "_label": "CONTROL_STRUCTURE",
+      "argumentIndex": -1,
+      "lineNumber": 7,
+      "id": 23
+    },
+    {
+      "name": "<operator>.lessEqualsThan",
+      "signature": "",
+      "code": "len <= 0",
+      "typeFullName": "<empty>",
+      "columnNumber": 9,
+      "order": 1,
+      "methodFullName": "<operator>.lessEqualsThan",
+      "_label": "CALL",
+      "dynamicTypeHintFullName": [
+        
+      ],
+      "dispatchType": "STATIC_DISPATCH",
+      "lineNumber": 7,
+      "id": 24,
+      "possibleTypes": [
+        
+      ],
+      "argumentIndex": -1
+    },
+    {
+      "dynamicTypeHintFullName": [
+        
+      ],
+      "name": "len",
+      "code": "len",
+      "typeFullName": "int",
+      "columnNumber": 9,
+      "order": 1,
+      "_label": "IDENTIFIER",
+      "lineNumber": 7,
+      "id": 25,
+      "possibleTypes": [
+        
+      ],
+      "argumentIndex": 1
+    },
+    {
+      "dynamicTypeHintFullName": [
+        
+      ],
+      "code": "0",
+      "typeFullName": "int",
+      "columnNumber": 16,
+      "order": 2,
+      "_label": "LITERAL",
+      "lineNumber": 7,
+      "id": 26,
+      "possibleTypes": [
+        
+      ],
+      "argumentIndex": 2
+    },
+    {
+      "dynamicTypeHintFullName": [
+        
+      ],
+      "code": "{\n        printf(\"Empty request.\\n\");\n        return;\n    }",
+      "typeFullName": "void",
+      "columnNumber": 19,
+      "order": 2,
+      "_label": "BLOCK",
+      "lineNumber": 7,
+      "id": 27,
+      "possibleTypes": [
+        
+      ],
+      "argumentIndex": -1
+    },
+    {
+      "name": "printf",
+      "signature": "",
+      "code": "printf(\"Empty request.\\n\")",
+      "typeFullName": "<empty>",
+      "columnNumber": 9,
+      "order": 1,
+      "methodFullName": "printf",
+      "_label": "CALL",
+      "dynamicTypeHintFullName": [
+        
+      ],
+      "dispatchType": "STATIC_DISPATCH",
+      "lineNumber": 8,
+      "id": 28,
+      "possibleTypes": [
+        
+      ],
+      "argumentIndex": -1
+    },
+    {
+      "dynamicTypeHintFullName": [
+        
+      ],
+      "code": "\"Empty request.\\n\"",
+      "typeFullName": "char",
+      "columnNumber": 16,
+      "order": 1,
+      "_label": "LITERAL",
+      "lineNumber": 8,
+      "id": 29,
+      "possibleTypes": [
+        
+      ],
+      "argumentIndex": 1
+    },
+    {
+      "code": "return;",
+      "columnNumber": 9,
+      "order": 2,
+      "_label": "RETURN",
+      "argumentIndex": -1,
+      "lineNumber": 9,
+      "id": 30
+    },
+    {
+      "parserTypeName": "CASTForStatement",
+      "code": "for (i = 0;i < len;i++)",
+      "columnNumber": 5,
+      "order": 8,
+      "controlStructureType": "FOR",
+      "_label": "CONTROL_STRUCTURE",
+      "argumentIndex": -1,
+      "lineNumber": 12,
+      "id": 31
+    },
+    {
+      "dynamicTypeHintFullName": [
+        
+      ],
+      "code": "<empty>",
+      "typeFullName": "void",
+      "columnNumber": 5,
+      "order": 1,
+      "_label": "BLOCK",
+      "lineNumber": 12,
+      "id": 32,
+      "possibleTypes": [
+        
+      ],
+      "argumentIndex": -1
+    },
+    {
+      "name": "<operator>.assignment",
+      "signature": "",
+      "code": "i = 0",
+      "typeFullName": "<empty>",
+      "columnNumber": 10,
+      "order": 1,
+      "methodFullName": "<operator>.assignment",
+      "_label": "CALL",
+      "dynamicTypeHintFullName": [
+        
+      ],
+      "dispatchType": "STATIC_DISPATCH",
+      "lineNumber": 12,
+      "id": 33,
+      "possibleTypes": [
+        
+      ],
+      "argumentIndex": -1
+    },
+    {
+      "dynamicTypeHintFullName": [
+        
+      ],
+      "name": "i",
+      "code": "i",
+      "typeFullName": "int",
+      "columnNumber": 10,
+      "order": 1,
+      "_label": "IDENTIFIER",
+      "lineNumber": 12,
+      "id": 34,
+      "possibleTypes": [
+        
+      ],
+      "argumentIndex": 1
+    },
+    {
+      "dynamicTypeHintFullName": [
+        
+      ],
+      "code": "0",
+      "typeFullName": "int",
+      "columnNumber": 14,
+      "order": 2,
+      "_label": "LITERAL",
+      "lineNumber": 12,
+      "id": 35,
+      "possibleTypes": [
+        
+      ],
+      "argumentIndex": 2
+    },
+    {
+      "name": "<operator>.lessThan",
+      "signature": "",
+      "code": "i < len",
+      "typeFullName": "<empty>",
+      "columnNumber": 17,
+      "order": 2,
+      "methodFullName": "<operator>.lessThan",
+      "_label": "CALL",
+      "dynamicTypeHintFullName": [
+        
+      ],
+      "dispatchType": "STATIC_DISPATCH",
+      "lineNumber": 12,
+      "id": 36,
+      "possibleTypes": [
+        
+      ],
+      "argumentIndex": 2
+    },
+    {
+      "dynamicTypeHintFullName": [
+        
+      ],
+      "name": "i",
+      "code": "i",
+      "typeFullName": "int",
+      "columnNumber": 17,
+      "order": 1,
+      "_label": "IDENTIFIER",
+      "lineNumber": 12,
+      "id": 37,
+      "possibleTypes": [
+        
+      ],
+      "argumentIndex": 1
+    },
+    {
+      "dynamicTypeHintFullName": [
+        
+      ],
+      "name": "len",
+      "code": "len",
+      "typeFullName": "int",
+      "columnNumber": 21,
+      "order": 2,
+      "_label": "IDENTIFIER",
+      "lineNumber": 12,
+      "id": 38,
+      "possibleTypes": [
+        
+      ],
+      "argumentIndex": 2
+    },
+    {
+      "name": "<operator>.postIncrement",
+      "signature": "",
+      "code": "i++",
+      "typeFullName": "<empty>",
+      "columnNumber": 26,
+      "order": 3,
+      "methodFullName": "<operator>.postIncrement",
+      "_label": "CALL",
+      "dynamicTypeHintFullName": [
+        
+      ],
+      "dispatchType": "STATIC_DISPATCH",
+      "lineNumber": 12,
+      "id": 39,
+      "possibleTypes": [
+        
+      ],
+      "argumentIndex": 3
+    },
+    {
+      "dynamicTypeHintFullName": [
+        
+      ],
+      "name": "i",
+      "code": "i",
+      "typeFullName": "int",
+      "columnNumber": 26,
+      "order": 1,
+      "_label": "IDENTIFIER",
+      "lineNumber": 12,
+      "id": 40,
+      "possibleTypes": [
+        
+      ],
+      "argumentIndex": 1
+    },
+    {
+      "dynamicTypeHintFullName": [
+        
+      ],
+      "code": "{\n        if (req[i] == '\\n' || req[i] == '\\r') {\n            req[i] = '\\0';\n            break;\n        }\n    }",
+      "typeFullName": "void",
+      "columnNumber": 31,
+      "order": 4,
+      "_label": "BLOCK",
+      "lineNumber": 12,
+      "id": 41,
+      "possibleTypes": [
+        
+      ],
+      "argumentIndex": 4
+    },
+    {
+      "parserTypeName": "CASTIfStatement",
+      "code": "if (req[i] == '\\n' || req[i] == '\\r')",
+      "columnNumber": 9,
+      "order": 1,
+      "controlStructureType": "IF",
+      "_label": "CONTROL_STRUCTURE",
+      "argumentIndex": -1,
+      "lineNumber": 13,
+      "id": 42
+    },
+    {
+      "name": "<operator>.logicalOr",
+      "signature": "",
+      "code": "req[i] == '\\n' || req[i] == '\\r'",
+      "typeFullName": "<empty>",
+      "columnNumber": 13,
+      "order": 1,
+      "methodFullName": "<operator>.logicalOr",
+      "_label": "CALL",
+      "dynamicTypeHintFullName": [
+        
+      ],
+      "dispatchType": "STATIC_DISPATCH",
+      "lineNumber": 13,
+      "id": 43,
+      "possibleTypes": [
+        
+      ],
+      "argumentIndex": -1
+    },
+    {
+      "name": "<operator>.equals",
+      "signature": "",
+      "code": "req[i] == '\\n'",
+      "typeFullName": "<empty>",
+      "columnNumber": 13,
+      "order": 1,
+      "methodFullName": "<operator>.equals",
+      "_label": "CALL",
+      "dynamicTypeHintFullName": [
+        
+      ],
+      "dispatchType": "STATIC_DISPATCH",
+      "lineNumber": 13,
+      "id": 44,
+      "possibleTypes": [
+        
+      ],
+      "argumentIndex": 1
+    },
+    {
+      "name": "<operator>.indirectIndexAccess",
+      "signature": "",
+      "code": "req[i]",
+      "typeFullName": "<empty>",
+      "columnNumber": 13,
+      "order": 1,
+      "methodFullName": "<operator>.indirectIndexAccess",
+      "_label": "CALL",
+      "dynamicTypeHintFullName": [
+        
+      ],
+      "dispatchType": "STATIC_DISPATCH",
+      "lineNumber": 13,
+      "id": 45,
+      "possibleTypes": [
+        
+      ],
+      "argumentIndex": 1
+    },
+    {
+      "dynamicTypeHintFullName": [
+        
+      ],
+      "name": "req",
+      "code": "req",
+      "typeFullName": "char*",
+      "columnNumber": 13,
+      "order": 1,
+      "_label": "IDENTIFIER",
+      "lineNumber": 13,
+      "id": 46,
+      "possibleTypes": [
+        
+      ],
+      "argumentIndex": 1
+    },
+    {
+      "dynamicTypeHintFullName": [
+        
+      ],
+      "name": "i",
+      "code": "i",
+      "typeFullName": "int",
+      "columnNumber": 17,
+      "order": 2,
+      "_label": "IDENTIFIER",
+      "lineNumber": 13,
+      "id": 47,
+      "possibleTypes": [
+        
+      ],
+      "argumentIndex": 2
+    },
+    {
+      "dynamicTypeHintFullName": [
+        
+      ],
+      "code": "'\\n'",
+      "typeFullName": "char",
+      "columnNumber": 23,
+      "order": 2,
+      "_label": "LITERAL",
+      "lineNumber": 13,
+      "id": 48,
+      "possibleTypes": [
+        
+      ],
+      "argumentIndex": 2
+    },
+    {
+      "name": "<operator>.equals",
+      "signature": "",
+      "code": "req[i] == '\\r'",
+      "typeFullName": "<empty>",
+      "columnNumber": 31,
+      "order": 2,
+      "methodFullName": "<operator>.equals",
+      "_label": "CALL",
+      "dynamicTypeHintFullName": [
+        
+      ],
+      "dispatchType": "STATIC_DISPATCH",
+      "lineNumber": 13,
+      "id": 49,
+      "possibleTypes": [
+        
+      ],
+      "argumentIndex": 2
+    },
+    {
+      "name": "<operator>.indirectIndexAccess",
+      "signature": "",
+      "code": "req[i]",
+      "typeFullName": "<empty>",
+      "columnNumber": 31,
+      "order": 1,
+      "methodFullName": "<operator>.indirectIndexAccess",
+      "_label": "CALL",
+      "dynamicTypeHintFullName": [
+        
+      ],
+      "dispatchType": "STATIC_DISPATCH",
+      "lineNumber": 13,
+      "id": 50,
+      "possibleTypes": [
+        
+      ],
+      "argumentIndex": 1
+    },
+    {
+      "dynamicTypeHintFullName": [
+        
+      ],
+      "name": "req",
+      "code": "req",
+      "typeFullName": "char*",
+      "columnNumber": 31,
+      "order": 1,
+      "_label": "IDENTIFIER",
+      "lineNumber": 13,
+      "id": 51,
+      "possibleTypes": [
+        
+      ],
+      "argumentIndex": 1
+    },
+    {
+      "dynamicTypeHintFullName": [
+        
+      ],
+      "name": "i",
+      "code": "i",
+      "typeFullName": "int",
+      "columnNumber": 35,
+      "order": 2,
+      "_label": "IDENTIFIER",
+      "lineNumber": 13,
+      "id": 52,
+      "possibleTypes": [
+        
+      ],
+      "argumentIndex": 2
+    },
+    {
+      "dynamicTypeHintFullName": [
+        
+      ],
+      "code": "'\\r'",
+      "typeFullName": "char",
+      "columnNumber": 41,
+      "order": 2,
+      "_label": "LITERAL",
+      "lineNumber": 13,
+      "id": 53,
+      "possibleTypes": [
+        
+      ],
+      "argumentIndex": 2
+    },
+    {
+      "dynamicTypeHintFullName": [
+        
+      ],
+      "code": "{\n            req[i] = '\\0';\n            break;\n        }",
+      "typeFullName": "void",
+      "columnNumber": 47,
+      "order": 2,
+      "_label": "BLOCK",
+      "lineNumber": 13,
+      "id": 54,
+      "possibleTypes": [
+        
+      ],
+      "argumentIndex": -1
+    },
+    {
+      "name": "<operator>.assignment",
+      "signature": "",
+      "code": "req[i] = '\\0'",
+      "typeFullName": "<empty>",
+      "columnNumber": 13,
+      "order": 1,
+      "methodFullName": "<operator>.assignment",
+      "_label": "CALL",
+      "dynamicTypeHintFullName": [
+        
+      ],
+      "dispatchType": "STATIC_DISPATCH",
+      "lineNumber": 14,
+      "id": 55,
+      "possibleTypes": [
+        
+      ],
+      "argumentIndex": -1
+    },
+    {
+      "name": "<operator>.indirectIndexAccess",
+      "signature": "",
+      "code": "req[i]",
+      "typeFullName": "<empty>",
+      "columnNumber": 13,
+      "order": 1,
+      "methodFullName": "<operator>.indirectIndexAccess",
+      "_label": "CALL",
+      "dynamicTypeHintFullName": [
+        
+      ],
+      "dispatchType": "STATIC_DISPATCH",
+      "lineNumber": 14,
+      "id": 56,
+      "possibleTypes": [
+        
+      ],
+      "argumentIndex": 1
+    },
+    {
+      "dynamicTypeHintFullName": [
+        
+      ],
+      "name": "req",
+      "code": "req",
+      "typeFullName": "char*",
+      "columnNumber": 13,
+      "order": 1,
+      "_label": "IDENTIFIER",
+      "lineNumber": 14,
+      "id": 57,
+      "possibleTypes": [
+        
+      ],
+      "argumentIndex": 1
+    },
+    {
+      "dynamicTypeHintFullName": [
+        
+      ],
+      "name": "i",
+      "code": "i",
+      "typeFullName": "int",
+      "columnNumber": 17,
+      "order": 2,
+      "_label": "IDENTIFIER",
+      "lineNumber": 14,
+      "id": 58,
+      "possibleTypes": [
+        
+      ],
+      "argumentIndex": 2
+    },
+    {
+      "dynamicTypeHintFullName": [
+        
+      ],
+      "code": "'\\0'",
+      "typeFullName": "char",
+      "columnNumber": 22,
+      "order": 2,
+      "_label": "LITERAL",
+      "lineNumber": 14,
+      "id": 59,
+      "possibleTypes": [
+        
+      ],
+      "argumentIndex": 2
+    },
+    {
+      "parserTypeName": "CASTBreakStatement",
+      "code": "break;",
+      "columnNumber": 13,
+      "order": 2,
+      "controlStructureType": "BREAK",
+      "_label": "CONTROL_STRUCTURE",
+      "argumentIndex": -1,
+      "lineNumber": 15,
+      "id": 60
+    },
+    {
+      "name": "memcpy",
+      "signature": "",
+      "code": "memcpy(buffer, req, len)",
+      "typeFullName": "<empty>",
+      "columnNumber": 5,
+      "order": 9,
+      "methodFullName": "memcpy",
+      "_label": "CALL",
+      "dynamicTypeHintFullName": [
+        
+      ],
+      "dispatchType": "STATIC_DISPATCH",
+      "lineNumber": 19,
+      "id": 61,
+      "possibleTypes": [
+        
+      ],
+      "argumentIndex": -1
+    },
+    {
+      "dynamicTypeHintFullName": [
+        
+      ],
+      "name": "buffer",
+      "code": "buffer",
+      "typeFullName": "char[64]",
+      "columnNumber": 12,
+      "order": 1,
+      "_label": "IDENTIFIER",
+      "lineNumber": 19,
+      "id": 62,
+      "possibleTypes": [
+        
+      ],
+      "argumentIndex": 1
+    },
+    {
+      "dynamicTypeHintFullName": [
+        
+      ],
+      "name": "req",
+      "code": "req",
+      "typeFullName": "char*",
+      "columnNumber": 20,
+      "order": 2,
+      "_label": "IDENTIFIER",
+      "lineNumber": 19,
+      "id": 63,
+      "possibleTypes": [
+        
+      ],
+      "argumentIndex": 2
+    },
+    {
+      "dynamicTypeHintFullName": [
+        
+      ],
+      "name": "len",
+      "code": "len",
+      "typeFullName": "int",
+      "columnNumber": 25,
+      "order": 3,
+      "_label": "IDENTIFIER",
+      "lineNumber": 19,
+      "id": 64,
+      "possibleTypes": [
+        
+      ],
+      "argumentIndex": 3
+    },
+    {
+      "name": "<operator>.assignment",
+      "signature": "",
+      "code": "buffer[len] = '\\0'",
+      "typeFullName": "<empty>",
+      "columnNumber": 5,
+      "order": 10,
+      "methodFullName": "<operator>.assignment",
+      "_label": "CALL",
+      "dynamicTypeHintFullName": [
+        
+      ],
+      "dispatchType": "STATIC_DISPATCH",
+      "lineNumber": 20,
+      "id": 65,
+      "possibleTypes": [
+        
+      ],
+      "argumentIndex": -1
+    },
+    {
+      "name": "<operator>.indirectIndexAccess",
+      "signature": "",
+      "code": "buffer[len]",
+      "typeFullName": "<empty>",
+      "columnNumber": 5,
+      "order": 1,
+      "methodFullName": "<operator>.indirectIndexAccess",
+      "_label": "CALL",
+      "dynamicTypeHintFullName": [
+        
+      ],
+      "dispatchType": "STATIC_DISPATCH",
+      "lineNumber": 20,
+      "id": 66,
+      "possibleTypes": [
+        
+      ],
+      "argumentIndex": 1
+    },
+    {
+      "dynamicTypeHintFullName": [
+        
+      ],
+      "name": "buffer",
+      "code": "buffer",
+      "typeFullName": "char[64]",
+      "columnNumber": 5,
+      "order": 1,
+      "_label": "IDENTIFIER",
+      "lineNumber": 20,
+      "id": 67,
+      "possibleTypes": [
+        
+      ],
+      "argumentIndex": 1
+    },
+    {
+      "dynamicTypeHintFullName": [
+        
+      ],
+      "name": "len",
+      "code": "len",
+      "typeFullName": "int",
+      "columnNumber": 12,
+      "order": 2,
+      "_label": "IDENTIFIER",
+      "lineNumber": 20,
+      "id": 68,
+      "possibleTypes": [
+        
+      ],
+      "argumentIndex": 2
+    },
+    {
+      "dynamicTypeHintFullName": [
+        
+      ],
+      "code": "'\\0'",
+      "typeFullName": "char",
+      "columnNumber": 19,
+      "order": 2,
+      "_label": "LITERAL",
+      "lineNumber": 20,
+      "id": 69,
+      "possibleTypes": [
+        
+      ],
+      "argumentIndex": 2
+    },
+    {
+      "parserTypeName": "CASTIfStatement",
+      "code": "if (strstr(buffer, \"ADMIN\"))",
+      "columnNumber": 5,
+      "order": 11,
+      "controlStructureType": "IF",
+      "_label": "CONTROL_STRUCTURE",
+      "argumentIndex": -1,
+      "lineNumber": 22,
+      "id": 70
+    },
+    {
+      "name": "strstr",
+      "signature": "",
+      "code": "strstr(buffer, \"ADMIN\")",
+      "typeFullName": "<empty>",
+      "columnNumber": 9,
+      "order": 1,
+      "methodFullName": "strstr",
+      "_label": "CALL",
+      "dynamicTypeHintFullName": [
+        
+      ],
+      "dispatchType": "STATIC_DISPATCH",
+      "lineNumber": 22,
+      "id": 71,
+      "possibleTypes": [
+        
+      ],
+      "argumentIndex": -1
+    },
+    {
+      "dynamicTypeHintFullName": [
+        
+      ],
+      "name": "buffer",
+      "code": "buffer",
+      "typeFullName": "char[64]",
+      "columnNumber": 16,
+      "order": 1,
+      "_label": "IDENTIFIER",
+      "lineNumber": 22,
+      "id": 72,
+      "possibleTypes": [
+        
+      ],
+      "argumentIndex": 1
+    },
+    {
+      "dynamicTypeHintFullName": [
+        
+      ],
+      "code": "\"ADMIN\"",
+      "typeFullName": "char",
+      "columnNumber": 24,
+      "order": 2,
+      "_label": "LITERAL",
+      "lineNumber": 22,
+      "id": 73,
+      "possibleTypes": [
+        
+      ],
+      "argumentIndex": 2
+    },
+    {
+      "dynamicTypeHintFullName": [
+        
+      ],
+      "code": "{\n        printf(\"Privileged command detected.\\n\");\n    }",
+      "typeFullName": "void",
+      "columnNumber": 34,
+      "order": 2,
+      "_label": "BLOCK",
+      "lineNumber": 22,
+      "id": 74,
+      "possibleTypes": [
+        
+      ],
+      "argumentIndex": -1
+    },
+    {
+      "name": "printf",
+      "signature": "",
+      "code": "printf(\"Privileged command detected.\\n\")",
+      "typeFullName": "<empty>",
+      "columnNumber": 9,
+      "order": 1,
+      "methodFullName": "printf",
+      "_label": "CALL",
+      "dynamicTypeHintFullName": [
+        
+      ],
+      "dispatchType": "STATIC_DISPATCH",
+      "lineNumber": 23,
+      "id": 75,
+      "possibleTypes": [
+        
+      ],
+      "argumentIndex": -1
+    },
+    {
+      "dynamicTypeHintFullName": [
+        
+      ],
+      "code": "\"Privileged command detected.\\n\"",
+      "typeFullName": "char",
+      "columnNumber": 16,
+      "order": 1,
+      "_label": "LITERAL",
+      "lineNumber": 23,
+      "id": 76,
+      "possibleTypes": [
+        
+      ],
+      "argumentIndex": 1
+    },
+    {
+      "name": "printf",
+      "signature": "",
+      "code": "printf(\"Processed: %s\\n\", buffer)",
+      "typeFullName": "<empty>",
+      "columnNumber": 5,
+      "order": 12,
+      "methodFullName": "printf",
+      "_label": "CALL",
+      "dynamicTypeHintFullName": [
+        
+      ],
+      "dispatchType": "STATIC_DISPATCH",
+      "lineNumber": 26,
+      "id": 77,
+      "possibleTypes": [
+        
+      ],
+      "argumentIndex": -1
+    },
+    {
+      "dynamicTypeHintFullName": [
+        
+      ],
+      "code": "\"Processed: %s\\n\"",
+      "typeFullName": "char",
+      "columnNumber": 12,
+      "order": 1,
+      "_label": "LITERAL",
+      "lineNumber": 26,
+      "id": 78,
+      "possibleTypes": [
+        
+      ],
+      "argumentIndex": 1
+    },
+    {
+      "dynamicTypeHintFullName": [
+        
+      ],
+      "name": "buffer",
+      "code": "buffer",
+      "typeFullName": "char[64]",
+      "columnNumber": 31,
+      "order": 2,
+      "_label": "IDENTIFIER",
+      "lineNumber": 26,
+      "id": 79,
+      "possibleTypes": [
+        
+      ],
+      "argumentIndex": 2
+    },
+    {
+      "dynamicTypeHintFullName": [
+        
+      ],
+      "evaluationStrategy": "BY_VALUE",
+      "code": "RET",
+      "typeFullName": "void",
+      "columnNumber": 1,
+      "order": 3,
+      "_label": "METHOD_RETURN",
+      "possibleTypes": [
+        
+      ],
+      "lineNumber": 1,
+      "id": 80
+    },
+    {
+      "name": "req",
+      "evaluationStrategy": "BY_VALUE",
+      "isVariadic": false,
+      "code": "char *req",
+      "typeFullName": "char*",
+      "columnNumber": 21,
+      "order": 1,
+      "_label": "METHOD_PARAMETER_OUT",
+      "index": 1,
+      "lineNumber": 1,
+      "id": 163
+    },
+    {
+      "dynamicTypeHintFullName": [
+        
+      ],
+      "evaluationStrategy": "BY_VALUE",
+      "code": "RET",
+      "typeFullName": "ANY",
+      "columnNumber": 1,
+      "order": 2,
+      "_label": "METHOD_RETURN",
+      "possibleTypes": [
+        
+      ],
+      "lineNumber": 1,
+      "id": 82
+    }
+  ],
+  
+  "ast_edges":  [
+    [
+      5,
+      6
+    ],
+    [
+      5,
+      82
+    ],
+    [
+      6,
+      7
+    ],
+    [
+      7,
+      8
+    ],
+    [
+      7,
+      9
+    ],
+    [
+      7,
+      80
+    ],
+    [
+      9,
+      10
+    ],
+    [
+      9,
+      11
+    ],
+    [
+      9,
+      12
+    ],
+    [
+      9,
+      15
+    ],
+    [
+      9,
+      16
+    ],
+    [
+      9,
+      20
+    ],
+    [
+      9,
+      23
+    ],
+    [
+      9,
+      31
+    ],
+    [
+      9,
+      61
+    ],
+    [
+      9,
+      65
+    ],
+    [
+      9,
+      70
+    ],
+    [
+      9,
+      77
+    ],
+    [
+      12,
+      13
+    ],
+    [
+      12,
+      14
+    ],
+    [
+      16,
+      17
+    ],
+    [
+      16,
+      18
+    ],
+    [
+      18,
+      19
+    ],
+    [
+      20,
+      21
+    ],
+    [
+      20,
+      22
+    ],
+    [
+      23,
+      24
+    ],
+    [
+      23,
+      27
+    ],
+    [
+      24,
+      25
+    ],
+    [
+      24,
+      26
+    ],
+    [
+      27,
+      28
+    ],
+    [
+      27,
+      30
+    ],
+    [
+      28,
+      29
+    ],
+    [
+      31,
+      32
+    ],
+    [
+      31,
+      36
+    ],
+    [
+      31,
+      39
+    ],
+    [
+      31,
+      41
+    ],
+    [
+      32,
+      33
+    ],
+    [
+      33,
+      34
+    ],
+    [
+      33,
+      35
+    ],
+    [
+      36,
+      37
+    ],
+    [
+      36,
+      38
+    ],
+    [
+      39,
+      40
+    ],
+    [
+      41,
+      42
+    ],
+    [
+      42,
+      43
+    ],
+    [
+      42,
+      54
+    ],
+    [
+      43,
+      44
+    ],
+    [
+      43,
+      49
+    ],
+    [
+      44,
+      45
+    ],
+    [
+      44,
+      48
+    ],
+    [
+      45,
+      46
+    ],
+    [
+      45,
+      47
+    ],
+    [
+      49,
+      50
+    ],
+    [
+      49,
+      53
+    ],
+    [
+      50,
+      51
+    ],
+    [
+      50,
+      52
+    ],
+    [
+      54,
+      55
+    ],
+    [
+      54,
+      60
+    ],
+    [
+      55,
+      56
+    ],
+    [
+      55,
+      59
+    ],
+    [
+      56,
+      57
+    ],
+    [
+      56,
+      58
+    ],
+    [
+      61,
+      62
+    ],
+    [
+      61,
+      63
+    ],
+    [
+      61,
+      64
+    ],
+    [
+      65,
+      66
+    ],
+    [
+      65,
+      69
+    ],
+    [
+      66,
+      67
+    ],
+    [
+      66,
+      68
+    ],
+    [
+      70,
+      71
+    ],
+    [
+      70,
+      74
+    ],
+    [
+      71,
+      72
+    ],
+    [
+      71,
+      73
+    ],
+    [
+      74,
+      75
+    ],
+    [
+      75,
+      76
+    ],
+    [
+      77,
+      78
+    ],
+    [
+      77,
+      79
+    ]
+  ],
+  
+  "cfg_edges":  [
+    [
+      12,
+      18
+    ],
+    [
+      16,
+      20
+    ],
+    [
+      20,
+      24
+    ],
+    [
+      61,
+      66
+    ],
+    [
+      65,
+      71
+    ],
+    [
+      77,
+      80
+    ],
+    [
+      18,
+      16
+    ],
+    [
+      24,
+      28
+    ],
+    [
+      24,
+      33
+    ],
+    [
+      36,
+      45
+    ],
+    [
+      36,
+      61
+    ],
+    [
+      39,
+      36
+    ],
+    [
+      66,
+      65
+    ],
+    [
+      71,
+      75
+    ],
+    [
+      71,
+      77
+    ],
+    [
+      28,
+      30
+    ],
+    [
+      30,
+      80
+    ],
+    [
+      33,
+      36
+    ],
+    [
+      75,
+      77
+    ],
+    [
+      43,
+      56
+    ],
+    [
+      43,
+      39
+    ],
+    [
+      44,
+      43
+    ],
+    [
+      44,
+      50
+    ],
+    [
+      49,
+      43
+    ],
+    [
+      55,
+      61
+    ],
+    [
+      45,
+      44
+    ],
+    [
+      50,
+      49
+    ],
+    [
+      56,
+      55
+    ],
+    [
+      7,
+      12
+    ]
+  ],
+  
+  "cdg_edges":  [
+    [
+      24,
+      30
+    ],
+    [
+      24,
+      33
+    ],
+    [
+      24,
+      61
+    ],
+    [
+      24,
+      77
+    ],
+    [
+      24,
+      28
+    ],
+    [
+      24,
+      66
+    ],
+    [
+      24,
+      71
+    ],
+    [
+      24,
+      36
+    ],
+    [
+      24,
+      65
+    ],
+    [
+      36,
+      45
+    ],
+    [
+      36,
+      44
+    ],
+    [
+      36,
+      43
+    ],
+    [
+      71,
+      75
+    ],
+    [
+      43,
+      36
+    ],
+    [
+      43,
+      56
+    ],
+    [
+      43,
+      55
+    ],
+    [
+      43,
+      39
+    ],
+    [
+      44,
+      49
+    ],
+    [
+      44,
+      50
+    ]
+  ],
+  
+  "ddg_edges":  [
+    [
+      30,
+      80
+    ],
+    [
+      12,
+      80
+    ],
+    [
+      12,
+      80
+    ],
+    [
+      18,
+      80
+    ],
+    [
+      16,
+      80
+    ],
+    [
+      16,
+      80
+    ],
+    [
+      20,
+      80
+    ],
+    [
+      24,
+      80
+    ],
+    [
+      24,
+      80
+    ],
+    [
+      28,
+      80
+    ],
+    [
+      7,
+      8
+    ],
+    [
+      7,
+      12
+    ],
+    [
+      18,
+      16
+    ],
+    [
+      7,
+      65
+    ],
+    [
+      7,
+      20
+    ],
+    [
+      16,
+      20
+    ],
+    [
+      7,
+      61
+    ],
+    [
+      18,
+      61
+    ],
+    [
+      44,
+      61
+    ],
+    [
+      49,
+      61
+    ],
+    [
+      55,
+      61
+    ],
+    [
+      36,
+      61
+    ],
+    [
+      7,
+      77
+    ],
+    [
+      65,
+      77
+    ],
+    [
+      71,
+      77
+    ],
+    [
+      8,
+      18
+    ],
+    [
+      7,
+      18
+    ],
+    [
+      20,
+      24
+    ],
+    [
+      7,
+      24
+    ],
+    [
+      7,
+      30
+    ],
+    [
+      7,
+      33
+    ],
+    [
+      33,
+      36
+    ],
+    [
+      39,
+      36
+    ],
+    [
+      7,
+      36
+    ],
+    [
+      24,
+      36
+    ],
+    [
+      36,
+      39
+    ],
+    [
+      7,
+      39
+    ],
+    [
+      61,
+      71
+    ],
+    [
+      65,
+      71
+    ],
+    [
+      7,
+      71
+    ],
+    [
+      7,
+      28
+    ],
+    [
+      7,
+      75
+    ],
+    [
+      44,
+      43
+    ],
+    [
+      44,
+      43
+    ],
+    [
+      49,
+      43
+    ],
+    [
+      49,
+      43
+    ],
+    [
+      7,
+      55
+    ],
+    [
+      18,
+      44
+    ],
+    [
+      49,
+      44
+    ],
+    [
+      7,
+      44
+    ],
+    [
+      18,
+      49
+    ],
+    [
+      44,
+      49
+    ],
+    [
+      7,
+      49
+    ]
+  ]
+
+}

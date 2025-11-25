@@ -1,0 +1,11 @@
+mode,s,file,N_overlap,F1_base,F1_pert,DeltaF1,IS,IS_correct,threshold
+api,0.2,pred_FFMPeg+Qemu_api_s020.jsonl,2413,0.8616,0.815,0.0465,0.8711,0.9003,0.5
+api,0.4,pred_FFMPeg+Qemu_api_s040.jsonl,2374,0.8616,0.7977,0.0638,0.8614,0.8886,0.5
+api,0.6,pred_FFMPeg+Qemu_api_s060.jsonl,2325,0.8616,0.7772,0.0843,0.849,0.8732,0.5
+api,0.8,pred_FFMPeg+Qemu_api_s080.jsonl,2317,0.8616,0.7573,0.1042,0.8265,0.8515,0.5
+api,1.0,pred_FFMPeg+Qemu_api_s100.jsonl,2334,0.8616,0.7398,0.1218,0.8098,0.8334,0.5
+token,0.2,pred_FFMPeg+Qemu_token_s020.jsonl,2172,0.8616,0.8583,0.0032,0.9641,0.972,0.5
+token,0.4,pred_FFMPeg+Qemu_token_s040.jsonl,2214,0.8616,0.8448,0.0168,0.9363,0.9509,0.5
+token,0.6,pred_FFMPeg+Qemu_token_s060.jsonl,2284,0.8616,0.8408,0.0208,0.9199,0.9414,0.5
+token,0.8,pred_FFMPeg+Qemu_token_s080.jsonl,2350,0.8616,0.8238,0.0378,0.9102,0.9289,0.5
+token,1.0,pred_FFMPeg+Qemu_token_s100.jsonl,2338,0.8616,0.8206,0.041,0.8939,0.9171,0.5
